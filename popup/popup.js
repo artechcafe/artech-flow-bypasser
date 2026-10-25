@@ -1,4 +1,4 @@
-import { BLOCKED_PATH, FLOW_URL, getTools, isEnabled, setEnabled, setTool } from "../shared.js";
+import { BLOCKED_PATH, DOWNLOAD_URL, FLOW_URL, checkForUpdate, getTools, isEnabled, setEnabled, setTool } from "../shared.js";
 
 const $ = (id) => document.getElementById(id);
 const ui = {
@@ -204,6 +204,16 @@ document.addEventListener("keydown", (e) => {
     toggleHelp(false);
   }
 });
+
+// Update banner, from the version published on GitHub (cached for hours).
+checkForUpdate()
+  .then((latest) => {
+    if (!latest) return;
+    $("update-version").textContent = "v" + latest;
+    $("update-download").href = DOWNLOAD_URL;
+    $("update").hidden = false;
+  })
+  .catch(() => {});
 
 ui.version.textContent = "v" + chrome.runtime.getManifest().version;
 

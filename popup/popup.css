@@ -99,6 +99,46 @@ body { width: 340px; }
 .icon-btn[aria-expanded="true"] { color: var(--red-hi); background: var(--red-wash); border-color: rgba(212, 104, 107, 0.45); }
 .icon-btn:focus-visible { outline: 2px solid var(--red-hi); outline-offset: 2px; }
 
+/* ---------- update banner ---------- */
+
+.update {
+  margin-bottom: 12px;
+  padding: 11px 12px;
+  border-radius: 14px;
+  background: var(--red-wash);
+  border: 1px solid rgba(212, 104, 107, 0.45);
+  animation: drop 0.22s ease;
+}
+
+.update-row { display: flex; align-items: center; gap: 8px; color: var(--red-hi); }
+.update-row svg { flex: none; }
+.update-text { flex: 1; font-size: 12.5px; font-weight: 700; color: var(--text); }
+.update-text b { font-family: "Segoe UI", system-ui, sans-serif; color: var(--red-hi); }
+
+.update-btn {
+  flex: none;
+  padding: 5px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #c95e62, #92393d);
+  border: 1px solid rgba(228, 132, 134, 0.45);
+}
+
+.update-btn:hover { filter: brightness(1.08); }
+.update-btn:focus-visible { outline: 2px solid var(--red-hi); outline-offset: 2px; }
+
+.update-steps {
+  margin: 8px 0 0;
+  list-style: persian;
+  padding-inline-start: 18px;
+  color: #cfcfd6;
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
 /* ---------- help ---------- */
 
 .help {

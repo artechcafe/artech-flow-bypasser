@@ -1,4 +1,4 @@
-import { applyRegistration, isEnabled } from "./shared.js";
+import { applyRegistration, checkForUpdate, isEnabled } from "./shared.js";
 
 // Keep the registered patch in step with the saved switch (default: on).
 async function sync() {
@@ -11,10 +11,14 @@ async function sync() {
 
 chrome.runtime.onInstalled.addListener(() => {
   sync();
+  checkForUpdate({ force: true });
   // Data of tools removed in 1.4.0.
   chrome.storage.local.remove(["templates", "customStyles", "gridZoom"]);
 });
-chrome.runtime.onStartup.addListener(sync);
+chrome.runtime.onStartup.addListener(() => {
+  sync();
+  checkForUpdate();
+});
 
 // "Generation finished" notifications from features/notify.js. The tab id is
 // kept in the notification id so a click can bring that tab back, even after

@@ -17,7 +17,7 @@
   const ALLOWED_CODE = 1;
 
   const state = {
-    version: "1.5.1",
+    version: "1.6.0",
     patched: 0,
     inspected: 0,
     lastPatchAt: 0,
