@@ -130,8 +130,39 @@ body { width: 340px; }
 .update-btn:hover { filter: brightness(1.08); }
 .update-btn:focus-visible { outline: 2px solid var(--red-hi); outline-offset: 2px; }
 
+.update-toggle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 9px;
+  color: var(--red-hi);
+  background: transparent;
+  border: 1px solid rgba(212, 104, 107, 0.35);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.update-toggle:hover { background: rgba(212, 104, 107, 0.18); }
+.update-toggle:focus-visible { outline: 2px solid var(--red-hi); outline-offset: 2px; }
+.update-toggle svg { transition: transform 0.25s ease; }
+.update-toggle[aria-expanded="false"] svg { transform: rotate(180deg); }
+
+/* Steps fold upward into the row above. */
+.update-steps-wrap {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.25s ease, opacity 0.2s ease;
+}
+
+.update-steps-wrap > ol { min-height: 0; overflow: hidden; }
+.update.is-folded .update-steps-wrap { grid-template-rows: 0fr; opacity: 0; }
+
 .update-steps {
-  margin: 8px 0 0;
+  margin: 0;
+  padding-top: 8px;
   list-style: persian;
   padding-inline-start: 18px;
   color: #cfcfd6;

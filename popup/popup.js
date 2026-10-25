@@ -206,14 +206,35 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Update banner, from the version published on GitHub (cached for hours).
-checkForUpdate()
-  .then((latest) => {
-    if (!latest) return;
-    $("update-version").textContent = "v" + latest;
-    $("update-download").href = DOWNLOAD_URL;
-    $("update").hidden = false;
-  })
-  .catch(() => {});
+// Open popup.html?demo-update in a tab to see it without a real update.
+const updateToggle = $("update-toggle");
+
+function foldSteps(folded) {
+  $("update").classList.toggle("is-folded", folded);
+  updateToggle.setAttribute("aria-expanded", String(!folded));
+  const label = folded ? "باز کردن راهنمای آپدیت" : "بستن راهنمای آپدیت";
+  updateToggle.title = label;
+  updateToggle.setAttribute("aria-label", label);
+}
+
+updateToggle.addEventListener("click", () => {
+  const folded = !$("update").classList.contains("is-folded");
+  foldSteps(folded);
+  chrome.storage.local.set({ updateStepsFolded: folded });
+});
+
+async function showUpdate() {
+  const demo = new URLSearchParams(location.search).has("demo-update");
+  const latest = demo ? "9.9.9" : await checkForUpdate();
+  if (!latest) return;
+  const { updateStepsFolded = false } = await chrome.storage.local.get("updateStepsFolded");
+  foldSteps(updateStepsFolded);
+  $("update-version").textContent = "v" + latest;
+  $("update-download").href = DOWNLOAD_URL;
+  $("update").hidden = false;
+}
+
+showUpdate().catch(() => {});
 
 ui.version.textContent = "v" + chrome.runtime.getManifest().version;
 

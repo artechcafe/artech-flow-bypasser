@@ -34,12 +34,19 @@
         </svg>
         <span class="update-text">نسخهٔ جدید <b id="update-version" dir="ltr"></b> اومده!</span>
         <a id="update-download" class="update-btn" target="_blank" rel="noopener noreferrer">دانلود</a>
+        <button id="update-toggle" class="update-toggle" type="button" aria-expanded="true" aria-controls="update-steps" title="بستن راهنمای آپدیت" aria-label="بستن راهنمای آپدیت">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 15l6-6 6 6" />
+          </svg>
+        </button>
       </div>
+      <div id="update-steps" class="update-steps-wrap">
       <ol class="update-steps">
         <li>فایل ZIP رو دانلود کن و محتوای پوشهٔ داخلش رو روی همون پوشهٔ قبلی افزونه کپی کن (Replace).</li>
         <li>توی <span dir="ltr">chrome://extensions</span> دکمهٔ بارگذاری دوبارهٔ افزونه رو بزن.</li>
         <li>تب Flow رو رفرش کن.</li>
       </ol>
+      </div>
     </section>
 
     <section id="card" class="card">
