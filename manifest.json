@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Artech Flow Bypasser",
+  "short_name": "Artech Flow",
+  "version": "1.5.1",
+  "minimum_chrome_version": "111",
+  "description": "رفع خطای «کشور شما پشتیبانی نمی‌شود» در Google Flow، به‌همراه ابزارهای اضافه برای پرامپت‌نویسی و کار با Flow.",
+  "author": "artech.cafe",
+  "homepage_url": "https://artech.cafe",
+  "permissions": ["scripting", "storage", "notifications"],
+  "host_permissions": ["https://flow.google.com/*", "https://translate.googleapis.com/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://flow.google.com/*"],
+      "js": [
+        "features/core.js",
+        "features/toolbar.js",
+        "features/ref-swap.js",
+        "features/ref-preview.js",
+        "features/rtl.js",
+        "features/translate.js",
+        "features/negative.js",
+        "features/notify.js",
+        "features/auto-retry.js"
+      ],
+      "css": ["features/tools.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Artech Flow Bypasser",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
