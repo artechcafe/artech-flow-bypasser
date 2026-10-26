@@ -26,7 +26,7 @@ By [artech.cafe](https://artech.cafe) · [Instagram](https://instagram.com/artec
 
 ### Firefox
 
-A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. Until it is signed by Mozilla it installs only as a temporary add-on: open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `firefox/manifest.json`. It is removed when Firefox closes.
+A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. To install it, open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `firefox/manifest.json`.
 
 ### Notes
 
@@ -53,7 +53,7 @@ A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. Until i
 
 ## فایرفاکس
 
-نسخهٔ فایرفاکس (۱۲۸ یا جدیدتر) در پوشهٔ [`firefox/`](firefox) است. تا وقتی موزیلا امضایش نکرده، فقط به‌صورت موقت نصب می‌شود: به `about:debugging#/runtime/this-firefox` بروید، «Load Temporary Add-on…» را بزنید و فایل `firefox/manifest.json` را انتخاب کنید. با بستن فایرفاکس حذف می‌شود.
+نسخهٔ فایرفاکس (۱۲۸ یا جدیدتر) در پوشهٔ [`firefox/`](firefox) است. برای نصب، به `about:debugging#/runtime/this-firefox` بروید، «Load Temporary Add-on…» را بزنید و فایل `firefox/manifest.json` را انتخاب کنید.
 
 ## ابزارهای اضافه
 
