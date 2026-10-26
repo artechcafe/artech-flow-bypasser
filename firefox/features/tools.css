@@ -1,0 +1,190 @@
+/* Artech Flow — in-page tool styles. Everything is prefixed to stay clear of Flow's own CSS. */
+
+.artech-chip-ring {
+  position: fixed;
+  z-index: 2147483000;
+  pointer-events: none;
+  border: 1.5px solid rgba(212, 104, 107, 0.85);
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px rgba(212, 104, 107, 0.16);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.artech-chip-ring.is-visible { opacity: 1; }
+
+.artech-chip-ring.is-pending {
+  border-style: dashed;
+  animation: artech-ring-pulse 1.3s ease-in-out infinite;
+}
+
+.artech-chip-ring::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  direction: rtl;
+  font: 600 11px/1.5 "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, #c95e62, #92393d);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes artech-ring-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(212, 104, 107, 0.16); }
+  50% { box-shadow: 0 0 0 6px rgba(212, 104, 107, 0.04); }
+}
+
+/* ---- rtl.js: Persian prompts read right-to-left ---- */
+
+/* Prompt box (and the edit view's box), saved prompts in the history panel, text inputs. */
+html.artech-rtl .ProseMirror p,
+html.artech-rtl .prompt-text,
+html.artech-rtl input[type="text"],
+html.artech-rtl input[type="search"],
+html.artech-rtl input:not([type]),
+html.artech-rtl textarea {
+  unicode-bidi: plaintext;
+  text-align: start;
+}
+
+/* Google Sans has no Persian glyphs; give the fallback a proper Persian face. */
+html.artech-rtl .ProseMirror,
+html.artech-rtl .prompt-text {
+  font-family: "Google Sans Text", "Google Sans", "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ---- toolbar.js: buttons inside the prompt box ---- */
+
+.artech-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+  margin-inline-start: 2px;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.artech-bar-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  color: #b9b9c2;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.artech-bar-btn:hover,
+.artech-bar-btn.is-open {
+  color: #f0a3a4;
+  background: rgba(212, 104, 107, 0.14);
+}
+
+/* ---- popover panels ---- */
+
+.artech-pop {
+  position: fixed;
+  z-index: 990; /* below Flow's own menus (cdk overlay: 1000) */
+  width: 340px;
+  max-height: min(460px, calc(100vh - 140px));
+  overflow-y: auto;
+  padding: 14px;
+  border-radius: 16px;
+  font: 400 12.5px/1.6 "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  color: #ededf0;
+  background: #141417;
+  border: 1px solid rgba(212, 104, 107, 0.3);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a42 transparent;
+}
+
+.artech-pop-title { margin-bottom: 10px; font-size: 14px; font-weight: 700; }
+.artech-muted { margin: 0 0 8px; color: #8e8e98; font-size: 11.5px; }
+
+.artech-row { display: flex; gap: 6px; margin-top: 12px; }
+
+.artech-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font: inherit;
+  color: #ededf0;
+  background: #0d0d10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.artech-input:focus { border-color: rgba(212, 104, 107, 0.6); }
+.artech-textarea { display: block; width: 100%; min-height: 70px; resize: vertical; box-sizing: border-box; }
+
+.artech-btn {
+  flex: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #c95e62, #92393d);
+  border: 1px solid rgba(228, 132, 134, 0.45);
+  cursor: pointer;
+}
+
+.artech-btn:hover { filter: brightness(1.08); }
+
+/* ---- ref-preview.js ---- */
+
+.artech-preview {
+  position: fixed;
+  z-index: 2147483000;
+  width: 180px;
+  padding: 5px;
+  border-radius: 14px;
+  background: #141417;
+  border: 1px solid rgba(212, 104, 107, 0.45);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.artech-preview.is-visible { opacity: 1; transform: none; }
+.artech-preview img { display: block; width: 100%; max-height: 240px; object-fit: contain; border-radius: 10px; }
+
+/* ---- toast ---- */
+
+.artech-toast {
+  position: fixed;
+  z-index: 2147483001;
+  left: 50%;
+  top: 72px;
+  transform: translate(-50%, -12px);
+  max-width: min(420px, calc(100vw - 32px));
+  padding: 10px 16px;
+  border-radius: 12px;
+  direction: rtl;
+  font: 500 13px/1.6 "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  color: #ededf0;
+  background: #141417;
+  border: 1px solid rgba(212, 104, 107, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.artech-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

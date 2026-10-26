@@ -24,6 +24,10 @@ By [artech.cafe](https://artech.cafe) · [Instagram](https://instagram.com/artec
 4. Click **Load unpacked** and select that folder.
 5. Open or refresh Google Flow.
 
+### Firefox
+
+A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. Until it is signed by Mozilla it installs only as a temporary add-on: open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `firefox/manifest.json`. It is removed when Firefox closes.
+
 ### Notes
 
 - The extension does not change your IP. You still need a VPN; if Flow opens and makes images but video generation says *"You've reached your usage limit"*, switch the VPN server to another country (preferably the US).
@@ -46,6 +50,10 @@ By [artech.cafe](https://artech.cafe) · [Instagram](https://instagram.com/artec
 3. در کروم به `chrome://extensions` بروید و «Developer mode» را روشن کنید.
 4. «Load unpacked» را بزنید و همان پوشه را انتخاب کنید.
 5. تب Google Flow را باز کنید یا یک بار رفرش کنید.
+
+## فایرفاکس
+
+نسخهٔ فایرفاکس (۱۲۸ یا جدیدتر) در پوشهٔ [`firefox/`](firefox) است. تا وقتی موزیلا امضایش نکرده، فقط به‌صورت موقت نصب می‌شود: به `about:debugging#/runtime/this-firefox` بروید، «Load Temporary Add-on…» را بزنید و فایل `firefox/manifest.json` را انتخاب کنید. با بستن فایرفاکس حذف می‌شود.
 
 ## ابزارهای اضافه
 
