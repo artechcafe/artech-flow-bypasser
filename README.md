@@ -26,7 +26,7 @@ By [artech.cafe](https://artech.cafe) · [Instagram](https://instagram.com/artec
 
 ### Firefox
 
-A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. To install it, open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…** and pick `firefox/manifest.json`.
+For Firefox 128 or newer, open [artech-flow-bypasser-firefox.xpi](https://github.com/artechcafe/artech-flow-bypasser/releases/download/firefox-v1.6.1/artech-flow-bypasser-firefox.xpi) in Firefox and click **Add**. It updates itself when a new version is published. The source is in the [`firefox/`](firefox) folder.
 
 ### Notes
 
@@ -53,7 +53,7 @@ A Firefox version (Firefox 128+) is in the [`firefox/`](firefox) folder. To inst
 
 ## فایرفاکس
 
-نسخهٔ فایرفاکس (۱۲۸ یا جدیدتر) در پوشهٔ [`firefox/`](firefox) است. برای نصب، به `about:debugging#/runtime/this-firefox` بروید، «Load Temporary Add-on…» را بزنید و فایل `firefox/manifest.json` را انتخاب کنید.
+برای فایرفاکس ۱۲۸ یا جدیدتر، فایل [artech-flow-bypasser-firefox.xpi](https://github.com/artechcafe/artech-flow-bypasser/releases/download/firefox-v1.6.1/artech-flow-bypasser-firefox.xpi) را در فایرفاکس باز کنید و «Add» را بزنید. نسخه‌های بعدی خودکار آپدیت می‌شوند. کد این نسخه در پوشهٔ [`firefox/`](firefox) است.
 
 ## ابزارهای اضافه
 

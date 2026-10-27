@@ -1,0 +1,12 @@
+{
+  "addons": {
+    "flow-bypasser@artech.cafe": {
+      "updates": [
+        {
+          "version": "1.6.1",
+          "update_link": "https://github.com/artechcafe/artech-flow-bypasser/releases/download/firefox-v1.6.1/artech-flow-bypasser-firefox.xpi"
+        }
+      ]
+    }
+  }
+}

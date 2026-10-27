@@ -10,9 +10,10 @@
     "gecko": {
       "id": "flow-bypasser@artech.cafe",
       "strict_min_version": "128.0",
+      "update_url": "https://raw.githubusercontent.com/artechcafe/artech-flow-bypasser/main/firefox/updates.json",
       "data_collection_permissions": {
         "required": [
-          "none"
+          "websiteContent"
         ]
       }
     }

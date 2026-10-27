@@ -16,7 +16,6 @@
 
 ## نصب
 
-1. مخزن را دانلود و extract کنید.
-2. در فایرفاکس به `about:debugging#/runtime/this-firefox` بروید.
-3. «Load Temporary Add-on…» را بزنید و فایل `firefox/manifest.json` را انتخاب کنید.
-4. Google Flow را باز کنید. اگر پنجرهٔ افزونه دکمهٔ «دادن اجازه» نشان داد، بزنید و تب را رفرش کنید.
+فایل [artech-flow-bypasser-firefox.xpi](https://github.com/artechcafe/artech-flow-bypasser/releases/download/firefox-v1.6.1/artech-flow-bypasser-firefox.xpi) را در فایرفاکس باز کنید و «Add» را بزنید. اگر پنجرهٔ افزونه دکمهٔ «دادن اجازه» نشان داد، بزنید و تب Flow را رفرش کنید.
+
+نسخه‌های بعدی از طریق [`updates.json`](updates.json) خودکار آپدیت می‌شوند.
